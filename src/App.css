@@ -1,0 +1,33 @@
+/* App.css */
+
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.chat-sidebar {
+  width: 200px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-list-item {
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.chat-list-item:hover {
+  background-color: #555;
+}
+
+.chat-main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Add any additional styles for the main chat area here */
