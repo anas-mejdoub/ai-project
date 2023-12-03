@@ -5,7 +5,7 @@ import { MainContainer, ChatContainer, MessageList, Message, MessageInput, Typin
 import { v4 as uuidv4 } from 'uuid';
 
 
-const API_KEY = "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";
+const API_KEY = "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";
 const systemMessage = { 
   "role": "system", "content": "explain like i am 5 years old"
 }
@@ -26,13 +26,13 @@ const ChatList = ({ setActiveChat, history }) => {
         >
           New Chat
         </div>
-        {history.map((h,i) => (<div
+        {history.map((h,i) => ((Number(h.id) % 2) ===0 ?  (<div
           className="chat-list-item"
           key={i}
           onClick={handleClick}
         >
-          chat-{h.id}
-        </div>))}
+          chat-{i == 0 ? 0 : i - i/2}
+        </div>) : null))}
     </div>
   );
 };
@@ -78,11 +78,13 @@ function App() {
     }
     sethistory(updatedHistory);
     localStorage.setItem('history', JSON.stringify(history));
+    localStorage.setItem('id', JSON.stringify(id));
   }, [messages]);
   useEffect(() =>{
     let id = localStorage.getItem('id');
     id = id ? JSON.parse(id) : 0;
-    if (!messages[0].message)
+    console.log(id)
+    if (history[0].messages)
     {
       localStorage.setItem('id', JSON.stringify(Number(id + 1)));
     }
