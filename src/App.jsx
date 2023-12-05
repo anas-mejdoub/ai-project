@@ -5,7 +5,7 @@ import { MainContainer, ChatContainer, MessageList, Message, MessageInput, Typin
 import { v4 as uuidv4 } from 'uuid';
 
 
-const API_KEY = "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";
+const API_KEY = process.env.API_KEY;
 const systemMessage = { 
   "role": "system", "content": "explain like i am 5 years old"
 }
